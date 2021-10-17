@@ -1,0 +1,265 @@
+:root{
+    --ColorMenu:#00a4db;
+    --ColorFondo:#f0f3f5;
+    --Blanco: #fff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: var(--ColorFondo);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+/*----------------------------------------------------------Titulo------------------------------------*/
+.content{
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 2.2rem;
+}
+.title{
+    font-family: 'Paprika', cursive;
+}
+.title h1{
+    font-size: 3rem;
+}
+.title p{
+    font-size: 1.2rem;
+}
+/*-------------------------------------------Elavoracion Del Menu--------------------------------------*/
+.menu{
+    width:100%;
+    height: 3.12em;
+    background: var(--ColorMenu);
+    margin-top:1em ;
+
+}
+.menu ul{
+    list-style: none;
+}
+.menu li{
+    margin: .9em 1.8em .9em .68em;
+    float: left;
+}
+
+.menu a{
+    font-size: 1.05em;
+    text-decoration: none;
+    color: var(--ColorFondo);
+}
+.menu_li--active a{
+    font-size: 1.11em;
+    color:  var(--Blanco);
+}
+/*Hice esto sin ninguna razon pero si quiere lo puede usar, (Es una Transicion al menu :v)
+.menu li :hover{
+    color: #fff;
+    font-weight: 500;
+    transition: 1.5s;
+}
+*/
+
+.img_header img{
+    width: 100%;
+    height: 26em;
+    margin: .9em 0 0;
+}
+/* ----------------------------------------Los Diseños del Section---------------------------------*/
+.section{
+    width: 100%;
+    margin: .30rem;
+    margin-left: 0;
+    background: var(--Blanco);
+}
+.subtitle {
+    font-size: 1.7em;
+    font-weight: 10;
+    padding: .69rem 1.29rem;
+    margin-top: .68rem 0 3px;
+}
+.section img{
+    display: block;
+    width: 60%;
+    margin: auto;
+    padding-top: 1rem;
+}
+.text{
+    padding: 1.29rem 3em;
+    text-align: justify;
+}
+/*-----------------------------------Imagenes de Las Redes Sociales-----------------------------*/
+.section_redes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section_redes img{
+    width: 5em;
+    margin: 1em 1em 2em;
+}
+.section_redes a {
+    text-decoration: none;
+    color: #000;
+}
+
+/*-------------------------------------Estructuracion De la Pagina------------------------------*/
+.justify_section{
+    display:grid; 
+    grid-template-columns: 70% 29%;
+}
+/*-------------------------La organizacion de los productos con el grid---------------------------*/
+.shot_content{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+ /*-----------------------------Estos son Los Productos de la Shot----------------------------*/
+.products{
+    text-align: center;
+    width: 90%;
+    font-size: .9em;
+    margin: 1rem;
+    font-weight: bold; 
+} 
+.letters {
+    border-radius: 1rem;
+    box-shadow: .4rem .4rem .8rem rgb(192, 191, 191);
+}
+.products img{
+    width: 85%;
+    height: 11em;
+}
+.products p{
+    margin: .8rem .3rem;
+}
+.products button, .section_publications button {
+    width: 6rem;
+    height: 1.7rem;
+    border-radius: .38rem;
+    background: var(--ColorMenu);
+    color: Var(--Blanco);
+    border: solid var(--ColorMenu);
+    cursor: pointer;
+    margin: 0 0 1rem;
+}
+
+/*-----------------------Section De Las Publicaciones------------------------*/
+.section_publications{
+    text-align: justify;
+    width: 95%;
+    display: block;
+    margin: auto;
+}
+.section_publications img{
+    padding: 1em 0;
+    width: 100%;
+    height: 20em;
+}
+.section_publications button{
+    margin: 1rem 0;
+    display: inline-block;
+}
+.content-posts{
+    display: inline-block;
+    max-height: 14rem;
+    overflow: hidden;
+}
+/*
+.section_publications h3{
+    font-weight: 10000;
+    margin:1rem 0;
+}*/
+/*---------------------------------------Layout_The_See_More---------------------------------*/
+.see_more{
+    margin: .5rem 0;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.see_more img{
+  width: 100%;
+  padding: 0;
+}
+.see_more > div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.see_more-buttoms  {
+    display: block;
+    margin: 2rem 0;
+    text-align: center;
+    
+}
+.see_more h3{
+    margin: 1rem 0 0;
+    color: rgb(9, 255, 0);
+}
+/*---------------------------------Este es el Aside------------------------------------------*/
+.aside{
+    margin: .30rem .35rem;
+    margin-right: 0;
+    padding: 1rem;
+}
+.aside p{
+    padding: 0 0 .69rem;
+}
+.aside ul{
+    max-height: 10rem;
+    padding: .8rem 0 0;
+    overflow: hidden;
+}
+.aside ul li{
+    list-style: none;
+    display: block;
+    margin: 1.5rem;
+}
+.aside a{
+    text-decoration: none; 
+    color: var(--ColorMenu);  
+}
+.aside--input{
+    display: block;
+}
+.aside--input a{
+  margin: 1rem .38rem;
+  color: #00a4db;
+}
+
+/*-------------------------------------------DiseÃƒÂ±o del Footer-----------------------------------------*/
+.footer{
+    width: 100%;
+    height: 2.8rem;
+    margin-top: .30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--ColorMenu);
+    color: var(--Blanco);
+    font-size: 1.1rem;
+}
+
+/*-----------------------------------------Responsive------------------------------------------*/
+@media  (max-width:720px) {
+    .shot_content{
+        grid-template-columns: 50% 50%;
+    }
+    .products{
+        margin: 1.2em;
+    }
+} 
+@media (max-width:515px){
+    body{
+        font-size:12.5px;
+    }
+    .shot_content{
+        grid-template-columns: 100%;
+    }
+    .justify_section{
+        grid-template-columns: 69% 28%;
+    }   
+}
