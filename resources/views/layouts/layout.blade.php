@@ -34,7 +34,7 @@
             </div>
             <!------------------------------Imagen Del Header------------------------------>
             <div class="img_header">
-                <img src="{{ asset('img/Header.jpg') }}">
+              <img src="{{ Storage::url($site_banner[0]->site_banner) }}">
             </div>
         </header>
         @yield('content')

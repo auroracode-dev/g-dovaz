@@ -15,6 +15,7 @@ class CreateSiteInitsTable extends Migration
     {
         Schema::create('site_inits', function (Blueprint $table) {
             $table->id();
+            $table->string('site_banner')->nullable();
             $table->string('first_section_title')->nullable();
             $table->string('img_first_section')->nullable();
             $table->text('first_description')->nullable();

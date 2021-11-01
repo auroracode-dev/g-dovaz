@@ -14,6 +14,6 @@ class Site_initSeeder extends Seeder
      */
     public function run()
     {
-      Site_init::factory(1)->create();
+        Site_init::factory(1)->create();
     }
 }

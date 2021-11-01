@@ -12,7 +12,11 @@
         @method('put')
         <h2 class="card-header">Inicio de la pagína</h2>
         <div class="card-body">
-
+            <h4 class="w-100 mb-2">Banner de la pagina</h4>
+            <div class="form-group">
+              <label class="form-label" for="site_banner">Solo imagenes PNG, JPEG o JPG</label>
+              <input type="file" id="site_banner" name="site_banner"/>
+            </div>
             <h4 class="w-100 mb-2">Primera Sección</h4>
             <div class="form-group">
                 <label for="first-title" class="form-label">Titulo</label>
