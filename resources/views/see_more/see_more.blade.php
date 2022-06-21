@@ -7,7 +7,7 @@
         @section('content')
 
             <!------------------------------Creacion de Las Secciones------------------------------>
-            <h2 class="section subtitle">{{ $post->title }}</h2>
+            <h2 class="section subtitle"><strong>{{ $post->title }}</strong></h2>
             <section class="section">
                 <img src="{{ $post->url_path }}">
                 <div class="text">{!! $post->content !!}</div>

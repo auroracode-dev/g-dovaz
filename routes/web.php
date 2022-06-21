@@ -23,13 +23,18 @@ Route::get('/', [ViewController::class, 'post']);*/
 
 Route::get('/', [ViewController::class, 'index'])->name('index');
 Route::get('shop', [ViewController::class, 'shop'])->name('shop');
-Route::get('post', [ViewController::class, 'post'])->name('post');
-Route::get('content', [ViewController::class, 'content'])->name('content');
-Route::get('gallery', [ViewController::class, 'gallery']) ->name('gallery');
-Route::get('gallery/download/{gallery}', [GalleryController::class, 'download'])->name('gallery.download');
+Route::get('posts', [ViewController::class, 'post'])->name('post');
+Route::get('news', [ViewController::class, 'news'])->name('news');
+Route::get('projects', [ViewController::class, 'project'])->name('project');
 Route::get('see_more/{post}', [ViewController::class, 'see_more'])->name('see_more');
-Route::get('gallery_see_more/{product}', [ViewController::class, 'gallery_see'])-> name('gallery_see');
-Route::get('shop_see_more/{product}', [ViewController::class, 'shop_see'])->name('shop_see');
+Route::get('shop/{product}', [ViewController::class, 'shop_see'])->name('shop_see');
+
+
+//Route::get('gallery', [ViewController::class, 'gallery']) ->name('gallery');
+//Route::get('gallery/download/{gallery}', [GalleryController::class, 'download'])->name('gallery.download');
+//Route::get('gallery_see_more/{product}', [ViewController::class, 'gallery_see'])-> name('gallery_see');
+
+
 /*
 Route::post('/register', function(Request $request) {
   $user = new User();

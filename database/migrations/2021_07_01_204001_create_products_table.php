@@ -18,7 +18,6 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('preview');
-            $table->string('img');
             $table->string('file');
             $table->integer('price');
             $table->foreignId('user_id')->constrained('users');

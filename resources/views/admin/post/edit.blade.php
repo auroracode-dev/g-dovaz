@@ -41,8 +41,9 @@
                 <div class="form-group">
                     <label for="type" class="form-label">Tipo de publicación</label>
                     <select id="type" class="form-control" name="type">
-                        <option @if ($post->type == 'Estrategia Didactica') selected @endif value="Estrategia Didactica">Estrategia Didactica</option>
-                        <option @if ($post->type == 'Blog') selected @endif value="Blog">Blog</option>
+                        <option @if ($post->type == 'news') selected @endif value="news">Noticia</option>
+                        <option @if ($post->type == 'project') selected @endif value="project">Proyecto</option>
+                        <option @if ($post->type == 'blog') selected @endif value="blog">Blog</option>
                     </select>
                 </div>
             </div>

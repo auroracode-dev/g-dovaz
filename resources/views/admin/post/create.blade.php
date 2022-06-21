@@ -40,8 +40,9 @@
                 <div class="form-group">
                     <label for="type" class="form-label">Tipo de publicación</label>
                     <select id="type" class="form-control" name="type">
-                        <option value="Estrategia Didactica">Estrategia Didactica</option>
-                        <option value="Blog">Blog</option>
+                        <option value="news">Noticia</option>
+                        <option value="project">Proyecto</option>
+                        <option value="blog">Blog</option>
                     </select>
                 </div>
             </div>

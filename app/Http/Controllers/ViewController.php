@@ -13,77 +13,88 @@ class ViewController extends Controller
 {
     public function index()
     {
-        $site_init=Site_init::all();
-        $site_banner = Site_init::where('id', 1)->get('site_banner');
-        return view('index', compact('site_init', 'site_banner'));
+        $site_init = Site_init::find(1);
+        return view('index', compact('site_init'));
     }
 
     public function post(Request $request)
     {
-        $site_banner = Site_init::where('id', 1)->get('site_banner');
-        $posts=Post::where('type', 'blog')->get();
-        $ultimes=Post::whereDate('created_at', '<', '2040-10-11')->where('type', 'blog')->get();
-        $categories=Category::all();
-        $route="post";
+        $posts = Post::where('type', 'blog')->get();
+        $ultimes = Post::whereDate('created_at', '<', '2040-10-11')->where('type', 'blog')->get();
+        $categories = Category::all();
+        $route = "post";
         if (!empty($request->ct)) {
-            $posts=Post::where('type', 'Blog')->where('category_id', $request->ct)->get();
+            $posts = Post::where('type', 'blog')->where('category_id', $request->ct)->get();
         }
-        return view('post', compact('posts', 'categories', 'route', 'ultimes', 'site_banner'));
+        return view('post', compact('posts', 'categories', 'route', 'ultimes'));
     }
 
     public function shop(Request $request)
     {
-        $site_banner = Site_init::where('id', 1)->get('site_banner');
         $products = Product::all();
-        $ultimes=Product::whereDate('created_at', '<', '2040-10-11')->get();
+        $ultimes = Product::whereDate('created_at', '<', '2040-10-11')->get();
 
-        $route="shop";
-        $categories=Category::all();
+        $route = "shop";
+        $categories = Category::all();
         if (!empty($request->ct)) {
-            $products=Product::where('category_id', $request->ct)->get();
+            $products = Product::where('category_id', $request->ct)->get();
         }
-        return view('shop', compact('products', 'categories', 'route', 'ultimes', 'site_banner'));
+        return view('shop', compact('products', 'categories', 'route', 'ultimes'));
     }
-    public function content(Request $request)
+
+    public function news(Request $request)
     {
-        $site_banner = Site_init::where('id', 1)->get('site_banner');
-        $posts=Post::where('type', 'Estrategia Didactica')->get();
-        $ultimes=Post::whereDate('created_at', '<', '2040-10-11')->where('type', 'Estrategia Didactica')->get();
-        $route="content";
-        $categories=Category::all();
+        $posts = Post::where('type', 'news')->get();
+        $ultimes = Post::whereDate('created_at', '<', '2040-10-11')->where('type', 'news')->get();
+        $route = "news";
+        $categories = Category::all();
         if (!empty($request->ct)) {
-            $posts=Post::where('type', 'Estrategia Didactica')->where('category_id', $request->ct)->get();
+            $posts = Post::where('type', 'news')->where('category_id', $request->ct)->get();
         }
-        return view('post', compact('posts', 'categories', 'route', 'ultimes', 'site_banner'));
+        return view('post', compact('posts', 'categories', 'route', 'ultimes'));
     }
-    public function gallery(Request $request)
+
+    public function project(Request $request)
     {
-        $site_banner = Site_init::where('id', 1)->get('site_banner');
-        $products=Gallery::all();
-        $ultimes=Gallery::whereDate('created_at', '<', '2040-10-11')->get();
-        $route="gallery";
-        $categories=Category::all();
+        $posts = Post::where('type', 'project')->get();
+        $ultimes = Post::whereDate('created_at', '<', '2040-10-11')->where('type', 'project')->get();
+        $route = "project";
+        $categories = Category::all();
         if (!empty($request->ct)) {
-            $products=Gallery::where('category_id', $request->ct)->get();
+            $posts = Post::where('type', 'project')->where('category_id', $request->ct)->get();
         }
-        return view('gallery', compact('products', 'categories', 'route', 'ultimes', 'site_banner'));
+        return view('post', compact('posts', 'categories', 'route', 'ultimes'));
     }
+
+    // public function gallery(Request $request)
+    // {
+    //     $products = Gallery::all();
+    //     $ultimes = Gallery::whereDate('created_at', '<', '2040-10-11')->get();
+    //     $route = "gallery";
+    //     $categories = Category::all();
+    //     if (!empty($request->ct)) {
+    //         $products = Gallery::where('category_id', $request->ct)->get();
+    //     }
+    //     return view('gallery', compact('products', 'categories', 'route', 'ultimes'));
+    // }
+
     public function see_more(Post $post)
     {
         $site_banner = Site_init::where('id', 1)->get('site_banner');
-        $products=Gallery::all();
+        $products = Gallery::all();
         return view('see_more.see_more', compact('post', 'site_banner'));
     }
-    public function gallery_see(Gallery $product)
-    {
-        $site_banner = Site_init::where('id', 1)->get('site_banner');
-        $products=Gallery::all();
-        return view('see_more.gallery_see', compact('product', 'site_banner'));
-    }
+
+    // public function gallery_see(Gallery $product)
+    // {
+    //     $site_banner = Site_init::where('id', 1)->get('site_banner');
+    //     $products = Gallery::all();
+    //     return view('see_more.gallery_see', compact('product', 'site_banner'));
+    // }
+    
     public function shop_see(Product $product)
     {
-        $site_banner = Site_init::where('id', 1)->get('site_banner');
-        $products=Gallery::all();
-        return view('see_more.shop_see', compact('product', 'site_banner'));
+        $products = Gallery::all();
+        return view('see_more.shop_see', compact('product'));
     }
 }
